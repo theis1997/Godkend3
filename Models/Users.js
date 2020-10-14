@@ -24,7 +24,7 @@ class freeUser extends user {
     }
 }
 //CreditCard klassen skal ikke extende user, da det skal være muligt at bruge andre menneskers kort til at betale brugeren 
-class creditCard extends user{
+class creditCard extends paymentUser{
     constructor(cardHolder, cardNumber, expirationDate, CVV,){
 
     this.cardHolder  = cardHolder;
@@ -56,8 +56,8 @@ class image{
     constructor(imageType, author, imageSize,imagePath){ 
         this.imageType = imageType;
         this.author = author;
-        this.imageSize = imageSize
-        this.imagePath = imagePath
+        this.imageSize = imageSize;
+        this.imagePath = imagePath;
     }
 }
 
@@ -67,16 +67,17 @@ class image{
 
 
 
-var userX = new user ("Theis", "Pedersen","Male","23","Amager","theis_p@hotmail.com") 
-var theis = new paymentuser(userX, interestsTheis)
+var userX = new user ("Theis", "Pedersen","Male","23","Amager","theis_p@hotmail.com");
+var credit = new creditCard("Theis C. Pedersen","1122 3344 5566 7788", "09/25", "123", );
+var theis = new paymentuser(userX, interestsTheis);
 var interstsTheis = new interest(Theis,"basketball,football,fashion");
-var image = new image("png","Theis","49 kB på disken","/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver/Opgave3")
+var imageOne = new image("png","Theis","49 kB på disken","/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver/Opgave3");
 
 
-var userY = new user ("Mariah", "Rosa")
-var maria = new freeUser(userY,interestsMaria)
+var userY = new user ("Mariah", "Rosa", "Female", "21", "Østerbro", "theis_p@hotmail.com");
+var maria = new freeUser(userY,interestsMaria);
 var interestMaria = new interest(Maria,"fitness, dancing, fashion");
-var image = new image("png","Maria","143 kB","/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver/Opgave3")
+var imageTwo = new image("png","Maria","143 kB","/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver/Opgave3");
 
 
 
