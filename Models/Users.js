@@ -81,9 +81,9 @@ var userY = new user ("Mariah", "Rosa", "Female", "21", "Østerbro", "theis_p@ho
 new interests(userX,"Golf, Basketball, Fashion")
 new interests(userY,"Fashion, Make-up, Shoes, Jewelry")
 
-console.log(userX.interests)
+console.log(userX.interests) // for debugging uses
 
-var testMatch1 = new match(userX.firstName, userY.firstName)
+var testMatch1 = new match(userX.firstName, userY.firstName) //Jeg laver en matchvariabel som bygges på matchklassen og nedarver userx og y's firstName attributter
 var testMatch2 = new match("theis", "Mariah")
 
 
