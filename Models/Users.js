@@ -1,3 +1,4 @@
+// Super klassen user oprettes og dens properties defineres
 class user{
     constructor(firstName, lastName, gender, age, location, mail, interests){
         this.firstName = firstName;
@@ -9,14 +10,14 @@ class user{
         this.interests = [];
     }
 }
-
+ // PaymentUser klassen oprettes og extender user klassen
 class paymentUser extends user{
     constructor(user,creditCardInfo){
     super(user)
     this.creditCardInfo = creditCardInfo;
     }
 }
-
+//freeUser klassen oprettes og extender user klassen
 class freeUser extends user {
     constructor(user, trialPeriod){
         super(user.firstName, user.lastName, user.gender, user.age, user.location, user.mail, interests)
