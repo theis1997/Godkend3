@@ -1,7 +1,16 @@
-const express =  require("express")
-let router = express.Router();
+var express =  require("express");
+var router = express();
+const interest = require("../Models/Users")
+console.log(interest.interestArray)
 
-router
-.route("/Models/interests")
-.get((req, res) => {})
-.post((req, res) => {});
+
+function userController(req, res){
+    res.json(interest.interestsArray);
+
+}
+
+
+
+
+
+module.exports = userController;

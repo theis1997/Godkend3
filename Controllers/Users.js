@@ -1,12 +1,11 @@
-var express = require("express"); 
-var router = express.Router();
-const User = require("../Models/Users.js")
+var express = require("express")
+var router = express();
+const User = require("/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Smaa Systemer/opgaver/Godkendelsesopgaver/Opgave3 /Models/Users")
 
 
-router.get("/", (req, res) => {
+function userController(req, res) {
+    res.json(User.userArray)
 
-res.send("/Users virker");
+}
 
-})
-
-module.exports = router;
+module.exports = userController;
