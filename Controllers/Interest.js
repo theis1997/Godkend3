@@ -1,5 +1,3 @@
-var express =  require("express");
-var router = express();
 const interest = require("../Models/Users") // her defineres hvor min konstant: interest skal hente sin eksporterede data fra 
 
 

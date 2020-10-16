@@ -14,7 +14,7 @@ class user{
 class paymentUser extends user{
     constructor(user,creditCardInfo){
     super(user)
-    this.creditCardInfo = creditCardInfo;
+    this.creditCardInfo = creditCardInfo; // SKAL LIGE GENNEMTÆNKES //
     }
 }
 //freeUser klassen oprettes og extender user klassen
@@ -45,17 +45,17 @@ class interests extends user{
     }
 }
 
-class match extends user {
+class match extends user{
     constructor(user,match1,match2){
-        super(user)
+    super(user)
         this.match1 = match1;
         this.match2 = match2;
     }
-
 }
 
-class image{
+class image extends user{
     constructor(imageType, author, imageSize,imagePath){ 
+    super(user)
         this.imageType = imageType;
         this.author = author;
         this.imageSize = imageSize;
@@ -66,14 +66,14 @@ class image{
 
 
 
-var imageX = new image("png", "userX", "49 kb", "/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver/Opgave3");
+var imageX = new image("png", "userX", "49 kb", "/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver/Opgave3"); // disse parametrer er valgt fordi de ville være særligt interresante for en ejer af databasen/ appen (størrelse)
 var imageY = new image("png", "userY", "143 kb","/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver/Opgave3");
 
 
 var userX = new user ("Theis", "Pedersen","Male","23","Amager","theis_p@hotmail.com", imageX);
-var credit = new creditCard("Theis C. Pedersen","1122 3344 5566 7788", "09/25", "123",);
-var theis = new paymentUser(userX, credit, interestsTheis);
-var interestsTheis = new interests(userX,"Basketball, Shoes, Fitness, Codeing");
+var credit = new creditCard("Theis C. Pedersen","1122 3344 5566 7788", "09/25", "123");
+var theis = new paymentUser(userX, credit, interestsUserX); // husk 
+var interestsUserX = new interests(userX,"Basketball, Shoes, Fitness, Codeing");
 
 
 var userY = new user ("Mariah", "Rosa", "Female", "21", "Østerbro", "theis_p@hotmail.com", imageY);
@@ -88,9 +88,9 @@ var testMatch2 = new match("theis", "Mariah")
 
 
 var userArray = [];     //Et user array oprettes 
-userArray = [userX, userY];    // Begge vores users bliver samlet i en variabel 
+userArray = [userX, userY];    // Begge vores users bliver samlet i variablen: userArray
 
-var interestsArray = [];
+var interestsArray = [];      //
 interestsArray = [userX.interests,userY.interests];
 
 var matchArray = [];
