@@ -70,7 +70,7 @@ var imageX = new image("png", "userX", "49 kb", "/Users/theis/Desktop/Studierela
 var imageY = new image("png", "userY", "143 kb","/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver/Opgave3");
 
 
-var userX = new user ("Theis", "Pedersen","Male","23","Amager","theis_p@hotmail.com", imageX);
+var userX = new user ("Theis", "Pedersen","Male","23","Amager","theis_p@hotmail.com", imageX,credit);
 var credit = new creditCard("Theis C. Pedersen","1122 3344 5566 7788", "09/25", "123");
 var theis = new paymentUser(userX, credit, interestsUserX); // husk 
 var interestsUserX = new interests(userX,"Basketball, Shoes, Fitness, Codeing");
@@ -100,7 +100,7 @@ matchArray = [testMatch1, testMatch2];
 
 
 
-module.exports = {userArray,interestsArray, matchArray};
+module.exports = {userArray,interestsArray, matchArray}; // Min hardcodede data, sat ind i mine arrays, exporteres som et objekt
 
 
 
