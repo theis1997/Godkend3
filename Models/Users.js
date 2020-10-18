@@ -1,26 +1,26 @@
 // Super klassen user oprettes og dens properties defineres
 class user{
-    constructor(firstName, lastName, gender, age, location, mail, interests){
+    constructor(firstName, lastName, gender, age, location, mail){
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
         this.location = location; 
         this.mail = mail;
-        this.interests = [];
+        //this.interests = [];
     }
 }
  // PaymentUser klassen oprettes og extender user klassen
 class paymentUser extends user{
     constructor(user,creditCardInfo){
-    super(user)
+    super(user);
     this.creditCardInfo = creditCardInfo; // SKAL LIGE GENNEMTÆNKES //
     }
 }
 //freeUser klassen oprettes og extender user klassen
 class freeUser extends user {
     constructor(user, trialPeriod){
-        super(user.firstName, user.lastName, user.gender, user.age, user.location, user.mail, interests)
+        super(user);
         this.trialPeriod;
     }
 }
@@ -70,32 +70,32 @@ var imageX = new image("png", "userX", "49 kb", "/Users/theis/Desktop/Studierela
 var imageY = new image("png", "userY", "143 kb","/Users/theis/Desktop/Studierelateret/Programering:Udvikling Af Små Systemer/opgaver/Godkendelsesopgaver");
 
 
-var userX = new user ("Theis", "Pedersen","Male","23","Amager","theis_p@hotmail.com", imageX.userX,credit.userX);
+var userX = new user ("Theis", "Pedersen","Male","23","Amager","theis_p@hotmail.com", imageX);
 var credit = new creditCard("Theis C. Pedersen","1122 3344 5566 7788", "09/25", "123");
-var theis = new paymentUser(userX, credit, interestsUserX); // husk 
+var paymentUserX = new paymentUser(userX, credit, interestsUserX); // husk 
 var interestsUserX = new interests(userX,"Basketball, Shoes, Fitness, Codeing");
 
-console.log(userX)
+//console.log(userX) // til debugging brug
 
 var userY = new user ("Mariah", "Rosa", "Female", "21", "Østerbro", "theis_p@hotmail.com", imageY);
 
-new interests(userX,"Golf, Basketball, Fashion")
-new interests(userY,"Fashion, Make-up, Shoes, Jewelry")
+new interests(userX,"Golf, Basketball, Fashion");
+new interests(userY,"Fashion, Make-up, Shoes, Jewelry");
 
-console.log(userX.interests) // for debugging uses
+//console.log(userX.interests); // til debugging brug
 
-var testMatch1 = new match(userX.firstName, userY.firstName) //Jeg laver en matchvariabel som bygges på matchklassen og nedarver userx og y's firstName attributter
-var testMatch2 = new match("theis", "Mariah")
+var testMatch1 = new match(userX.firstName, userY.firstName); //Jeg laver en matchvariabel som bygges på matchklassen og nedarver userx og y's firstName attributter
+var testMatch2 = new match(userY.firstName, userX.firstName);
 
 
 var userArray = [];     //Et user array oprettes 
-userArray = [userX, userY];    // Begge vores users bliver samlet i variablen: userArray
+userArray = [paymentUserX, userY];    // Begge vores users bliver samlet i variablen: userArray
 
 var interestsArray = [];      //
 interestsArray = [userX.interests,userY.interests];
 
 var matchArray = [];
-matchArray = [testMatch1, testMatch2];
+matchArray = [testMatch1,testMatch2];
 
 
 

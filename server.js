@@ -5,8 +5,6 @@ const PORT = 3000; // her opretter jeg konstanten PORT og tilskriver den værdie
 
 // Her definerer jeg hvor, i mine controller-filer mine constants (user, interests og match) skal hente/tilgå deres tilhørende hardcodede data.
 const user = require("./Controllers/Users.js");  // const user bliver = userController funktionen, som eksporteres af /Controllers/Users.js
-
-
 const interests = require("./Controllers/Interest.js");
 const match = require("./Controllers/Match.js");
 
